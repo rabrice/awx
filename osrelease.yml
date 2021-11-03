@@ -1,0 +1,16 @@
+-
+  hosts:
+    - Linux
+  vars:
+    Dist: "Ubuntu"
+    Vers: "20"  
+  tasks:
+    
+    - name: Appendd lines to a file
+      lineinfile: 
+        dest: ~/iplist.txt
+        insertafter: EOF
+        line: "{{group_names}} {{inventory_hostname}} {{ ansible_distribution }} {{ ansible_distribution_version }}"
+        state: present
+      delegate_to: 127.0.0.1
+      when: (ansible_facts['distribution'] == Dist and ansible_facts['distribution_major_version'] == Vers)

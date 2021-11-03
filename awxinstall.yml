@@ -1,0 +1,5 @@
+---
+   - hosts: 192.168.3.205
+     become: true
+     roles:
+       - name: thorsteinbn.awx_standalone_install
