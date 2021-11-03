@@ -1,11 +1,5 @@
 -
-  hosts:
-    - Linux
-  vars:
-    Dist: "Ubuntu"
-    Vers: "20"  
   tasks:
-    
     - name: Appendd lines to a file
       lineinfile: 
         dest: ~/iplist.txt
