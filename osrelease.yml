@@ -1,6 +1,5 @@
 -
-  hosts:
-    - Linux
+  hosts: all
   tasks:
     - name: Appendd lines to a file
       lineinfile: 
